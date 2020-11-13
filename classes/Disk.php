@@ -1,7 +1,7 @@
 <?php
 
 
-class Disk implements Figure
+class Disk implements iFigure, iCircle
 {
     const PI = 3.14;
     private $r;
@@ -17,5 +17,13 @@ class Disk implements Figure
     public function getPerimeter()
     {
        return 2 * self::PI * $this->r;
+    }
+    public function getRadius()
+    {
+        return $this->r;
+    }
+    public function getDiameter()
+    {
+        return 2 * $this->r;
     }
 }
