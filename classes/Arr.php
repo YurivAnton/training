@@ -4,13 +4,18 @@
 class Arr
 {
     private $nums = [];
-    private $avgHelper;
+    //private $avgHelper;
 
-    public function __construct(){
+    /*public function __construct(){
         $this->avgHelper = new AvgHelper;
+    }*/
+    public function __toString()
+    {
+        return (string) array_sum($this->nums);
     }
     public function add($num){
         $this->nums[] = $num;
+        return $this;
     }
     public function getAvgMeanSum(){
         $nums = $this->nums;
