@@ -6,3 +6,4 @@ require_once 'classes/Date.php';
 
 $date = new Date();
 echo $date->getWeekDay();
+echo "it is good";
