@@ -4,27 +4,28 @@
 class User
 {
     private $name;
-    private $surname;
-    private $patronymic;
+    private $age;
 
-    public function __construct($name, $surname, $patronymic)
+    public function __set($property, $value)
     {
-        $this->name = $name;
-        $this->surname = $surname;
-        $this->patronymic = $patronymic;
+        switch($property)
+        {
+            case 'name':
+                if($value != '')
+                {
+                    $this->$property = $value;
+                }
+            break;
+            case 'age':
+                if($value >= 0 and $value <=70)
+                {
+                    $this->$property = $value;
+                }
+            break;
+        }
     }
-    public function __toString()
+    public function __get($property)
     {
-        return $this->surname.' '.$this->name.' '.$this->patronymic;
+        return $this->$property;
     }
-    /*public function getName()
-    {
-        return $this->name;
-    }
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-    abstract public function increaseRevenue($value);
-    abstract public function decreaseRevenue($value);*/
 }
