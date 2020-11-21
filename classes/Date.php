@@ -60,7 +60,10 @@ class Date
    }
    public function addDay($value)
    {
-
+	$date = date_create($this->date);	
+	date_modify($date, '1 day');
+//	return date_format($date, 'Y-m-d');
+	return $date;
    }
    public function subDay($value)
    {

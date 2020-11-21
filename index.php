@@ -5,5 +5,5 @@ error_reporting(E_ALL);
 require_once 'classes/Date.php';
 
 $date = new Date();
-echo $date->getWeekDay();
-echo "it is good";
+$date->addDay(2);
+echo $date;
