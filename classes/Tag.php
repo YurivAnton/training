@@ -29,7 +29,7 @@ class Tag
 
     public function getAttr($name)
     {
-        if(isset($this->attrs['$name'])){
+        if(isset($this->attrs[$name])){
             return $this->attrs[$name];
         } else {
             return null;
