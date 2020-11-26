@@ -2,8 +2,6 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'classes/Date.php';
+require_once 'classes/Tag.php';
 
-$date = new Date();
-$date->addDay(2);
-echo $date;
+echo (new Tag('input'))->setAttr('class', 'eee zzz kkk')->removeClass('zzz')->open();

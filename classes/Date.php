@@ -58,32 +58,80 @@ class Date
                 return date('w', strtotime($this->date));
         }
    }
-   public function addDay($value)
+   public function addDay($value = '')
    {
-	$date = date_create($this->date);	
-	date_modify($date, '1 day');
-//	return date_format($date, 'Y-m-d');
-	return $date;
+       if(!empty($value)){
+           $date = date_create($this->date);
+           date_modify($date, $value.' day');
+           $this->date = date_format($date, 'Y-m-d');
+           return $this;
+       } else {
+           $date = $this->date;
+           return $this;
+       }
    }
-   public function subDay($value)
+   public function subDay($value = '')
    {
+       if(!empty($value)){
+           $date = date_create($this->date);
+           date_modify($date, -$value.' day');
+           date_format($date, 'Y-m-d');
+           $this->date = date_format($date, 'Y-m-d');
+           return $this;
 
+       } else {
+           $date = $this->date;
+           return $this;
+       }
    }
-   public function addMonth($value)
+   public function addMonth($value = '')
    {
-
+       if(!empty($value)){
+           $date = date_create($this->date);
+           date_modify($date, $value.' month');
+           $this->date = date_format($date, 'Y-m-d');
+           return $this;
+       } else {
+           $date = $this->date;
+           return $this;
+       }
    }
-   public function subMonth($value)
+   public function subMonth($value = '')
    {
-
+       if(!empty($value)){
+           $date = date_create($this->date);
+           date_modify($date, -$value.' month');
+           $this->date = date_format($date, 'Y-m-d');
+           return $this;
+       } else {
+           $date = $this->date;
+           return $this;
+       }
    }
-   public function addYear($value)
+   public function addYear($value = '')
    {
-
+       if(!empty($value)){
+           $date = date_create($this->date);
+           date_modify($date, $value.' Year');
+           date_format($date, 'Y-m-d');
+           $this->date = date_format($date, 'Y-m-d');
+           return $this;
+       } else {
+           $date = $this->date;
+           return $this;
+       }
    }
-   public function subYear($value)
+   public function subYear($value = '')
    {
-
+       if(!empty($value)){
+           $date = date_create($this->date);
+           date_modify($date, -$value.' Year');
+           $this->date = date_format($date, 'Y-m-d');
+           return $this;
+       } else {
+           $date = $this->date;
+           return $this;
+       }
    }
    public function format($format)
    {
